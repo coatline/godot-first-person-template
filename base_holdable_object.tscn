@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ftseg4cnhcfs"]
+
+[ext_resource type="Script" uid="uid://duf8fdkkhv32y" path="res://holdable_object.gd" id="1_hhpbg"]
+[ext_resource type="PackedScene" uid="uid://c8r6m4xat2s7x" path="res://registered_object.tscn" id="2_ryqn5"]
+[ext_resource type="Script" uid="uid://djhtuqctt1vul" path="res://sound_on_collide.gd" id="3_fyikd"]
+[ext_resource type="AudioStream" uid="uid://b26jb87okmu2i" path="res://_assets/audio/ball-bounce.wav" id="4_4ay1v"]
+[ext_resource type="Script" uid="uid://cunvt610nr3rx" path="res://_resources/sound.gd" id="5_r2ac5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fc0e3"]
+radius = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_feb5d"]
+albedo_color = Color(0.9959243, 0, 0.21751896, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7jktm"]
+material = SubResource("StandardMaterial3D_feb5d")
+radius = 0.25
+height = 0.5
+
+[sub_resource type="Resource" id="Resource_j865k"]
+script = ExtResource("5_r2ac5")
+audio_clips = Array[AudioStream]([ExtResource("4_4ay1v")])
+metadata/_custom_type_script = "uid://cunvt610nr3rx"
+
+[node name="BaseHoldableObject" type="RigidBody3D" unique_id=414722430 node_paths=PackedStringArray("rb", "collider", "_interact_point", "registered_object") groups=["saveable"]]
+collision_layer = 3
+script = ExtResource("1_hhpbg")
+rb = NodePath(".")
+collider = NodePath("CollisionShape3D")
+display_name = "Ball"
+_interact_point = NodePath(".")
+registered_object = NodePath("RegisteredObject")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1732444656]
+shape = SubResource("SphereShape3D_fc0e3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=989916401]
+mesh = SubResource("SphereMesh_7jktm")
+
+[node name="RegisteredObject" parent="." unique_id=666199468 node_paths=PackedStringArray("root") instance=ExtResource("2_ryqn5")]
+root = NodePath("..")
+
+[node name="SoundOnCollide" type="Node" parent="." unique_id=869330308 node_paths=PackedStringArray("rb")]
+script = ExtResource("3_fyikd")
+sound = SubResource("Resource_j865k")
+rb = NodePath("..")

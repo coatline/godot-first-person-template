@@ -1,0 +1,95 @@
+[gd_resource type="Theme" format=3 uid="uid://b4qqmy6vlvjfu"]
+
+[ext_resource type="Texture2D" uid="uid://3p8i2per25cm" path="res://_assets/OLDsprites/_ui/button-hovered.png" id="1_mhdos"]
+[ext_resource type="Texture2D" uid="uid://17tsm1jeelem" path="res://_assets/OLDsprites/_ui/button-normal.png" id="2_pcqwp"]
+[ext_resource type="Texture2D" uid="uid://dkn2iadcb16om" path="res://_assets/OLDsprites/_ui/button-pressed.png" id="3_42sdx"]
+[ext_resource type="StyleBox" uid="uid://ten7ds57uiwo" path="res://_resources/themes/grabber_area_highlight.tres" id="4_mhdos"]
+[ext_resource type="StyleBox" uid="uid://djixjjn7tkojg" path="res://_resources/themes/grabber_area.tres" id="4_pcqwp"]
+[ext_resource type="StyleBox" uid="uid://dx3gjpic2711c" path="res://_resources/themes/slider.tres" id="5_mhdos"]
+[ext_resource type="FontFile" uid="uid://clcm7iia6bwsi" path="res://_assets/fonts/Lilita_One/LilitaOne-Regular.ttf" id="6_x5es4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_focus"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k0ycu"]
+texture = ExtResource("1_mhdos")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j8e57"]
+texture = ExtResource("2_pcqwp")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_whc82"]
+texture = ExtResource("3_42sdx")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[resource]
+default_font = ExtResource("6_x5es4")
+Button/constants/outline_size = 6
+Button/font_sizes/font_size = 22
+Button/styles/focus = SubResource("StyleBoxFlat_focus")
+Button/styles/hover = SubResource("StyleBoxTexture_k0ycu")
+Button/styles/normal = SubResource("StyleBoxTexture_j8e57")
+Button/styles/pressed = SubResource("StyleBoxTexture_whc82")
+CheckBox/constants/outline_size = 6
+CheckButton/constants/outline_size = 6
+CodeEdit/constants/outline_size = 0
+ColorPickerButton/constants/outline_size = 0
+FoldableContainer/constants/outline_size = 0
+GraphFrameTitleLabel/constants/outline_size = 0
+GraphFrameTitleLabel/constants/shadow_outline_size = 0
+GraphNodeTitleLabel/constants/outline_size = 0
+GraphNodeTitleLabel/constants/shadow_outline_size = 0
+HScrollBar/styles/grabber = null
+HScrollBar/styles/grabber_highlight = null
+HScrollBar/styles/grabber_pressed = null
+HSlider/styles/grabber_area = ExtResource("4_pcqwp")
+HSlider/styles/grabber_area_highlight = ExtResource("4_mhdos")
+HSlider/styles/slider = ExtResource("5_mhdos")
+ItemList/constants/outline_size = 0
+Label/constants/outline_size = 0
+Label/constants/shadow_outline_size = 0
+LineEdit/constants/outline_size = 0
+LinkButton/constants/outline_size = 0
+MenuBar/constants/outline_size = 0
+MenuButton/constants/outline_size = 6
+OptionButton/constants/outline_size = 6
+PopupMenu/constants/outline_size = 0
+PopupMenu/constants/separator_outline_size = 0
+ProgressBar/constants/outline_size = 0
+RichTextLabel/constants/outline_size = 6
+RichTextLabel/constants/shadow_outline_size = 0
+TabBar/constants/outline_size = 0
+TabContainer/constants/outline_size = 0
+TextEdit/constants/outline_size = 0
+TooltipLabel/constants/outline_size = 0
+Tree/constants/outline_size = 0
+VScrollBar/styles/grabber = null
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VSlider/styles/grabber_area = ExtResource("4_pcqwp")
+VSlider/styles/grabber_area_highlight = ExtResource("4_mhdos")
+VSlider/styles/slider = ExtResource("5_mhdos")
+Window/constants/title_outline_size = 0

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ObjectType" format=3 uid="uid://dm8egb5g1pvra"]
+
+[ext_resource type="Script" uid="uid://5q52w8sacdj8" path="res://object_type.gd" id="1_sss1r"]
+
+[resource]
+script = ExtResource("1_sss1r")
+type_id = "ball"
+name = "Ball"
+packed_scene_uuid = "uid://ddkxyl342uk6f"
+metadata/_custom_type_script = "uid://5q52w8sacdj8"

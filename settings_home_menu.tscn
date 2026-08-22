@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b2tkk2f22nyt5"]
+
+[ext_resource type="Theme" uid="uid://b4qqmy6vlvjfu" path="res://_resources/themes/ui_theme.tres" id="1_7qqcy"]
+[ext_resource type="Script" uid="uid://bdf41p86b2jw0" path="res://settings_home_menu.gd" id="1_ysse1"]
+[ext_resource type="PackedScene" uid="uid://c6r4ui7pxhd24" path="res://standard_button.tscn" id="2_7qqcy"]
+
+[node name="SettingsHomeMenu" type="Control" unique_id=1128443825 node_paths=PackedStringArray("audio_button", "display_button", "gameplay_button", "controls_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_7qqcy")
+script = ExtResource("1_ysse1")
+audio_button = NodePath("VBoxContainer/AudioButton")
+display_button = NodePath("VBoxContainer/DisplayButton")
+gameplay_button = NodePath("VBoxContainer/GameplayButton")
+controls_button = NodePath("VBoxContainer/ControlsButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1447894713]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioButton" parent="VBoxContainer" unique_id=774751590 instance=ExtResource("2_7qqcy")]
+layout_mode = 2
+text = "Audio"
+focus_neighbor_top = NodePath("../AudioButton")
+focus_neighbor_bottom = NodePath("../DisplayButton")
+focus_neighbor_left = NodePath("../AudioButton")
+focus_neighbor_right = NodePath("../AudioButton")
+
+[node name="DisplayButton" parent="VBoxContainer" unique_id=1074123260 instance=ExtResource("2_7qqcy")]
+layout_mode = 2
+text = "Display"
+focus_neighbor_top = NodePath("../AudioButton")
+focus_neighbor_bottom = NodePath("../GameplayButton")
+focus_neighbor_left = NodePath("../DisplayButton")
+focus_neighbor_right = NodePath("../DisplayButton")
+
+[node name="GameplayButton" parent="VBoxContainer" unique_id=1936241254 instance=ExtResource("2_7qqcy")]
+layout_mode = 2
+text = "Gameplay"
+focus_neighbor_top = NodePath("../DisplayButton")
+focus_neighbor_bottom = NodePath("../ControlsButton")
+focus_neighbor_left = NodePath("../GameplayButton")
+focus_neighbor_right = NodePath("../GameplayButton")
+
+[node name="ControlsButton" parent="VBoxContainer" unique_id=42989124 instance=ExtResource("2_7qqcy")]
+layout_mode = 2
+text = "Controls"
+focus_neighbor_top = NodePath("../GameplayButton")
+focus_neighbor_bottom = NodePath("../ControlsButton")
+focus_neighbor_left = NodePath("../ControlsButton")
+focus_neighbor_right = NodePath("../ControlsButton")

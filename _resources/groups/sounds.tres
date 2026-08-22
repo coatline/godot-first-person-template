@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ResourceGroup" format=3 uid="uid://c4gre0hbd7ild"]
+
+[ext_resource type="Script" uid="uid://bgi7p73y3jila" path="res://addons/godot_resource_groups/resource_group.gd" id="1_jucvy"]
+
+[resource]
+script = ExtResource("1_jucvy")
+base_folder = "res://_resources/sounds"
+paths = Array[String](["res://_resources/sounds/grass_footstep.tres", "res://_resources/sounds/stone_footstep.tres"])
+metadata/_custom_type_script = "uid://bgi7p73y3jila"

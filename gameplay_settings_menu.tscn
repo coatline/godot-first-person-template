@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://dmmwm5jxgd0cb"]
+
+[ext_resource type="Script" uid="uid://bcmb1npwi8hg6" path="res://gameplay_settings_menu.gd" id="1_8jl7o"]
+[ext_resource type="Theme" uid="uid://b4qqmy6vlvjfu" path="res://_resources/themes/ui_theme.tres" id="1_abmoh"]
+[ext_resource type="PackedScene" uid="uid://c6r4ui7pxhd24" path="res://standard_button.tscn" id="2_abmoh"]
+
+[node name="GameplaySettingsMenu" type="Control" unique_id=388457678 node_paths=PackedStringArray("mouse_sensitivity_h_slider", "fov_h_slider", "invert_mouse_y_checkbox", "invert_mouse_x_checkbox", "head_bob_intensity_h_slider", "head_bob_intensity_label", "sprint_fov_boost_h_slider", "sprint_fov_boost_label", "toggle_sprint_checkbox", "mouse_sensitivity_label", "fov_label", "reset_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_abmoh")
+script = ExtResource("1_8jl7o")
+mouse_sensitivity_h_slider = NodePath("VBoxContainer/MouseSensitivity/MouseSensitivityHSlider")
+fov_h_slider = NodePath("VBoxContainer/FOV/FOVHSlider")
+invert_mouse_y_checkbox = NodePath("VBoxContainer/InvertMouseY/CheckBox")
+invert_mouse_x_checkbox = NodePath("VBoxContainer/InvertMouseX/CheckBox")
+head_bob_intensity_h_slider = NodePath("VBoxContainer/HeadBobIntensity/HSlider")
+head_bob_intensity_label = NodePath("VBoxContainer/HeadBobIntensity/Label")
+sprint_fov_boost_h_slider = NodePath("VBoxContainer/SprintFOVBoost/HSlider")
+sprint_fov_boost_label = NodePath("VBoxContainer/SprintFOVBoost/Label")
+toggle_sprint_checkbox = NodePath("VBoxContainer/ToggleSprint/CheckBox")
+mouse_sensitivity_label = NodePath("VBoxContainer/MouseSensitivity/MouseSensitivityLabel")
+fov_label = NodePath("VBoxContainer/FOV/FOVLabel")
+reset_button = NodePath("VBoxContainer/ResetButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1974638080]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MouseSensitivity" type="VBoxContainer" parent="VBoxContainer" unique_id=1372550393]
+layout_mode = 2
+
+[node name="MouseSensitivityLabel" type="Label" parent="VBoxContainer/MouseSensitivity" unique_id=1526182114]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mouse Sensitivity"
+
+[node name="MouseSensitivityHSlider" type="HSlider" parent="VBoxContainer/MouseSensitivity" unique_id=37924244]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../MouseSensitivityHSlider")
+focus_neighbor_top = NodePath("../MouseSensitivityHSlider")
+focus_neighbor_right = NodePath("../MouseSensitivityHSlider")
+focus_neighbor_bottom = NodePath("../../FOV/FOVHSlider")
+
+[node name="FOV" type="VBoxContainer" parent="VBoxContainer" unique_id=283485]
+layout_mode = 2
+
+[node name="FOVLabel" type="Label" parent="VBoxContainer/FOV" unique_id=274115999]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FOV"
+
+[node name="FOVHSlider" type="HSlider" parent="VBoxContainer/FOV" unique_id=466720775]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../FOVHSlider")
+focus_neighbor_top = NodePath("../../MouseSensitivity/MouseSensitivityHSlider")
+focus_neighbor_right = NodePath("../FOVHSlider")
+focus_neighbor_bottom = NodePath("../../InvertMouseY/CheckBox")
+
+[node name="InvertMouseY" type="VBoxContainer" parent="VBoxContainer" unique_id=1380839362]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/InvertMouseY" unique_id=763025020]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Invert Mouse Y"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/InvertMouseY" unique_id=235071025]
+layout_mode = 2
+focus_neighbor_left = NodePath("../CheckBox")
+focus_neighbor_top = NodePath("../../FOV/FOVHSlider")
+focus_neighbor_right = NodePath("../CheckBox")
+focus_neighbor_bottom = NodePath("../../InvertMouseX/CheckBox")
+
+[node name="InvertMouseX" type="VBoxContainer" parent="VBoxContainer" unique_id=657238093]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/InvertMouseX" unique_id=1258131827]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Invert Mouse X"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/InvertMouseX" unique_id=449788529]
+layout_mode = 2
+focus_neighbor_left = NodePath("../CheckBox")
+focus_neighbor_top = NodePath("../../InvertMouseY/CheckBox")
+focus_neighbor_right = NodePath("../CheckBox")
+focus_neighbor_bottom = NodePath("../../HeadBobIntensity/HSlider")
+
+[node name="ToggleSprint" type="VBoxContainer" parent="VBoxContainer" unique_id=999481239]
+layout_mode = 2
+focus_neighbor_top = NodePath("../InvertMouseX/CheckBox")
+focus_neighbor_bottom = NodePath("../HeadBobIntensity/HSlider")
+
+[node name="Label" type="Label" parent="VBoxContainer/ToggleSprint" unique_id=999481240]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Toggle Sprint"
+
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/ToggleSprint" unique_id=999481242]
+layout_mode = 2
+focus_neighbor_left = NodePath(".")
+focus_neighbor_top = NodePath("../../SprintFOVBoost/HSlider")
+focus_neighbor_right = NodePath(".")
+focus_neighbor_bottom = NodePath("../../ResetButton")
+
+[node name="HeadBobIntensity" type="VBoxContainer" parent="VBoxContainer" unique_id=900481236]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HeadBobIntensity" unique_id=900481237]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Head Bob Intensity"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/HeadBobIntensity" unique_id=900481238]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../HSlider")
+focus_neighbor_top = NodePath("../../InvertMouseX/CheckBox")
+focus_neighbor_right = NodePath("../HSlider")
+focus_neighbor_bottom = NodePath("../../SprintFOVBoost/HSlider")
+
+[node name="SprintFOVBoost" type="VBoxContainer" parent="VBoxContainer" unique_id=900481239]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/SprintFOVBoost" unique_id=900481240]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sprint FOV Boost"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer/SprintFOVBoost" unique_id=900481241]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../HSlider")
+focus_neighbor_top = NodePath("../../HeadBobIntensity/HSlider")
+focus_neighbor_right = NodePath("../HSlider")
+focus_neighbor_bottom = NodePath("../../ToggleSprint/CheckBox")
+
+[node name="ResetButton" parent="VBoxContainer" unique_id=1023713845 instance=ExtResource("2_abmoh")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../ResetButton")
+focus_neighbor_top = NodePath("../SprintFOVBoost/HSlider")
+focus_neighbor_right = NodePath("../ResetButton")
+focus_neighbor_bottom = NodePath("../ResetButton")
+text = "Reset"

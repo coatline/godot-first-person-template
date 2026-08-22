@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://s20n5seyjidm"]
+
+[ext_resource type="Theme" uid="uid://b4qqmy6vlvjfu" path="res://_resources/themes/ui_theme.tres" id="1_43eqn"]
+[ext_resource type="Script" uid="uid://b0s86t6fwi0o0" path="res://debug_menu.gd" id="2_05ddu"]
+
+[node name="DebugMenu" type="Control" unique_id=1726618172 node_paths=PackedStringArray("time_speed_label", "fps_label", "time_of_day_label")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 90.0
+offset_bottom = 55.0
+mouse_filter = 2
+theme = ExtResource("1_43eqn")
+script = ExtResource("2_05ddu")
+time_speed_label = NodePath("VBoxContainer/TimeSpeedLabel")
+fps_label = NodePath("VBoxContainer/FPSLabel")
+time_of_day_label = NodePath("VBoxContainer/TimeOfDayLabel")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=234247256]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.32941177)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=882075611]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TimeOfDayLabel" type="Label" parent="VBoxContainer" unique_id=650201662]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Day 1 - 03:00AM"
+
+[node name="FPSLabel" type="Label" parent="VBoxContainer" unique_id=1411911967]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "160fps"
+
+[node name="TimeSpeedLabel" type="Label" parent="VBoxContainer" unique_id=1986096271]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "2x"

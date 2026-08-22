@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dk10gjrkpmb0l"]
+
+[ext_resource type="Script" uid="uid://bv0cb5b72e7" path="res://settings_screen.gd" id="1_anur6"]
+[ext_resource type="PackedScene" uid="uid://b2tkk2f22nyt5" path="res://settings_home_menu.tscn" id="1_b5707"]
+[ext_resource type="PackedScene" uid="uid://detb8jonbf84c" path="res://audio_settings_menu.tscn" id="1_pfwel"]
+[ext_resource type="PackedScene" uid="uid://q8xp76pjh7u2" path="res://display_settings_menu.tscn" id="2_b5707"]
+[ext_resource type="PackedScene" uid="uid://dmmwm5jxgd0cb" path="res://gameplay_settings_menu.tscn" id="4_pl6fm"]
+[ext_resource type="PackedScene" uid="uid://bqgmiylgd0f1f" path="res://controls_settings_menu.tscn" id="6_rw28t"]
+
+[node name="SettingsScreen" type="CanvasLayer" unique_id=1506325922 node_paths=PackedStringArray("settings_home_menu")]
+process_mode = 2
+layer = 2
+script = ExtResource("1_anur6")
+settings_home_menu = NodePath("SettingsHomeMenu")
+
+[node name="SettingsHomeMenu" parent="." unique_id=1128443825 node_paths=PackedStringArray("audio_settings_menu", "display_settings_menu", "gameplay_settings_menu", "controls_settings_menu") instance=ExtResource("1_b5707")]
+visible = false
+audio_settings_menu = NodePath("../AudioSettingsMenu")
+display_settings_menu = NodePath("../DisplaySettingsMenu")
+gameplay_settings_menu = NodePath("../GameplaySettingsMenu")
+controls_settings_menu = NodePath("../ControlsSettingsMenu")
+
+[node name="AudioSettingsMenu" parent="." unique_id=236953802 instance=ExtResource("1_pfwel")]
+visible = false
+
+[node name="DisplaySettingsMenu" parent="." unique_id=1240851903 instance=ExtResource("2_b5707")]
+visible = false
+
+[node name="GameplaySettingsMenu" parent="." unique_id=388457678 instance=ExtResource("4_pl6fm")]
+visible = false
+
+[node name="ControlsSettingsMenu" parent="." unique_id=981848997 instance=ExtResource("6_rw28t")]
+visible = false

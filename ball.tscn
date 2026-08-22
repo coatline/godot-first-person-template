@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ddkxyl342uk6f"]
+
+[ext_resource type="PackedScene" uid="uid://ftseg4cnhcfs" path="res://base_holdable_object.tscn" id="1_x8fbi"]
+[ext_resource type="Resource" uid="uid://dm8egb5g1pvra" path="res://_resources/objects/Ball.tres" id="2_41u45"]
+[ext_resource type="PhysicsMaterial" uid="uid://1xaht6hsc555" path="res://_resources/physics_materials/ball_physics_material.tres" id="2_ktgx5"]
+
+[node name="Ball" unique_id=414722430 instance=ExtResource("1_x8fbi")]
+physics_material_override = ExtResource("2_ktgx5")
+contact_monitor = true
+max_contacts_reported = 1
+
+[node name="RegisteredObject" parent="." index="2" unique_id=666199468]
+type = ExtResource("2_41u45")

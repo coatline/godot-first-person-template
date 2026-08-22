@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ResourceGroup" format=3 uid="uid://bewto2e0tmy8i"]
+
+[ext_resource type="Script" uid="uid://bgi7p73y3jila" path="res://addons/godot_resource_groups/resource_group.gd" id="1_htvr3"]
+
+[resource]
+script = ExtResource("1_htvr3")
+base_folder = "res://_resources/objects"
+paths = Array[String](["res://_resources/objects/Ball.tres", "res://_resources/objects/Player.tres"])
+metadata/_custom_type_script = "uid://bgi7p73y3jila"

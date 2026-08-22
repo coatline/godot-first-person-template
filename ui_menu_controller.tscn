@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://u84lttyi2qk2"]
+
+[ext_resource type="Script" uid="uid://cljywcgk4vei3" path="res://ui_menu_controller.gd" id="1_l7o1h"]
+
+[node name="UIMenuController" type="Node" unique_id=751000476]
+process_mode = 3
+script = ExtResource("1_l7o1h")

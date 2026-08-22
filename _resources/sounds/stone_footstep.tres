@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Sound" format=3 uid="uid://cidjeyokt7w45"]
+
+[ext_resource type="AudioStream" uid="uid://cely7wxvf43cg" path="res://_assets/audio/stone-step.wav" id="1_7tb0v"]
+[ext_resource type="Script" uid="uid://cunvt610nr3rx" path="res://_resources/sound.gd" id="2_bxktp"]
+
+[resource]
+script = ExtResource("2_bxktp")
+audio_clips = Array[AudioStream]([ExtResource("1_7tb0v")])
+pitch_variation = 0.15
+name = "stone_footstep"
+metadata/_custom_type_script = "uid://cunvt610nr3rx"

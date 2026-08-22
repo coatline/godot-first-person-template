@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://ciini6m2tuivb"]
+
+[ext_resource type="Script" uid="uid://dmmciqj1dvqgw" path="res://time_manager.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://cvi75e2u0k25n" path="res://player.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://ddkxyl342uk6f" path="res://ball.tscn" id="5_vef74"]
+[ext_resource type="Script" uid="uid://c7h4naw2x5k8n" path="res://world_registry.gd" id="5_wrg1"]
+[ext_resource type="PackedScene" uid="uid://dr1qltcdr6hlp" path="res://pause_menu.tscn" id="6_j5wjh"]
+[ext_resource type="Script" uid="uid://c4v8r2n6s1w3p" path="res://game_save_manager.gd" id="6_svg1"]
+[ext_resource type="PackedScene" uid="uid://s20n5seyjidm" path="res://debug_menu.tscn" id="7_j5wjh"]
+[ext_resource type="PackedScene" uid="uid://dk10gjrkpmb0l" path="res://settings_screen.tscn" id="9_hve3p"]
+[ext_resource type="PackedScene" uid="uid://u84lttyi2qk2" path="res://ui_menu_controller.tscn" id="9_vef74"]
+[ext_resource type="Script" uid="uid://dj030yid3gybu" path="res://day_night_cycle.gd" id="10_dnc"]
+[ext_resource type="Shader" uid="uid://bstdm0m3r1a1i" path="res://star_dome.gdshader" id="11_star"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_stars"]
+render_priority = 0
+shader = ExtResource("11_star")
+shader_parameter/night_factor = 0.0
+shader_parameter/star_density = 0.6
+shader_parameter/star_size = 0.5
+shader_parameter/star_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="FloorGradient"]
+offsets = PackedFloat32Array(0, 0.45, 0.8, 1)
+colors = PackedColorArray(0.20148185, 0.28431383, 0.18963927, 1, 0.19, 0.28, 0.17, 1, 0.18690875, 0.26733014, 0.16276345, 1, 0.2162619, 0.2816775, 0.17244709, 1)
+
+[sub_resource type="FastNoiseLite" id="FloorNoise"]
+noise_type = 4
+seed = 1337
+frequency = 0.0129
+fractal_octaves = 1
+
+[sub_resource type="NoiseTexture2D" id="FloorTexture"]
+noise = SubResource("FloorNoise")
+color_ramp = SubResource("FloorGradient")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FloorRoughNoise"]
+noise_type = 2
+seed = 4242
+frequency = 0.06
+
+[sub_resource type="NoiseTexture2D" id="FloorRoughTexture"]
+width = 256
+height = 256
+noise = SubResource("FloorRoughNoise")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="FloorMaterial"]
+albedo_texture = SubResource("FloorTexture")
+roughness_texture = SubResource("FloorRoughTexture")
+uv1_scale = Vector3(2, 2, 0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_feb5d"]
+size = Vector3(50, 0.1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e2o6t"]
+size = Vector3(50, 0.1, 50)
+
+[sub_resource type="Gradient" id="Gradient_vef74"]
+offsets = PackedFloat32Array(0, 0.034912717, 0.59102243, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.11119685, 0.11119684, 0.11119684, 1, 0.11612656, 0.116126604, 0.11612659, 1, 0, 0, 0, 1)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vef74"]
+noise = SubResource("FloorNoise")
+color_ramp = SubResource("Gradient_vef74")
+seamless = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hve3p"]
+albedo_texture = SubResource("NoiseTexture2D_vef74")
+roughness_texture = SubResource("FloorRoughTexture")
+uv1_scale = Vector3(2, 2, 0.25)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fc0e3"]
+sky_top_color = Color(0, 0.6217813, 0.9090536, 1)
+sky_horizon_color = Color(0.7472643, 0.8484838, 0.9227059, 1)
+
+[sub_resource type="Sky" id="Sky_feb5d"]
+sky_material = SubResource("ProceduralSkyMaterial_fc0e3")
+
+[sub_resource type="Environment" id="Environment_e2o6t"]
+background_mode = 2
+sky = SubResource("Sky_feb5d")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_stars"]
+radius = 3000.0
+height = 3000.0
+radial_segments = 256
+rings = 128
+is_hemisphere = true
+
+[sub_resource type="Gradient" id="Gradient_moon"]
+offsets = PackedFloat32Array(0, 0.75, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_moon"]
+gradient = SubResource("Gradient_moon")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Game" type="Node" unique_id=1709350126]
+
+[node name="WorldRegistry" type="Node" parent="." unique_id=1874097782]
+script = ExtResource("5_wrg1")
+
+[node name="SaveManager" type="Node" parent="." unique_id=1517937490]
+script = ExtResource("6_svg1")
+
+[node name="TimeManager" type="Node" parent="." unique_id=1894505707 groups=["saveable"]]
+script = ExtResource("1_80nbo")
+real_minutes_per_day = 0.1
+
+[node name="DayNightCycle" type="Node" parent="." unique_id=2106660002 node_paths=PackedStringArray("sun", "world_environment", "moon_light", "moon_mesh")]
+script = ExtResource("10_dnc")
+sun = NodePath("../Sun")
+world_environment = NodePath("../WorldEnvironment")
+stars_material = SubResource("ShaderMaterial_stars")
+moon_light = NodePath("../MoonLight")
+moon_mesh = NodePath("../Moon")
+
+[node name="Player" parent="." unique_id=693658302 instance=ExtResource("2_e2o6t")]
+
+[node name="Ball" parent="." unique_id=414722430 instance=ExtResource("5_vef74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+
+[node name="GrassFloor" type="StaticBody3D" parent="." unique_id=1775432384 groups=["surface_grass"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrassFloor" unique_id=1600968663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+material_override = SubResource("FloorMaterial")
+mesh = SubResource("BoxMesh_feb5d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassFloor" unique_id=2038614353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+shape = SubResource("BoxShape3D_e2o6t")
+
+[node name="StoneFloor" type="StaticBody3D" parent="." unique_id=1194594570 groups=["surface_stone"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StoneFloor" unique_id=180485843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+material_override = SubResource("StandardMaterial3D_hve3p")
+mesh = SubResource("BoxMesh_feb5d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StoneFloor" unique_id=1332016880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+shape = SubResource("BoxShape3D_e2o6t")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1045346450]
+environment = SubResource("Environment_e2o6t")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=2106660001]
+transform = Transform3D(1, 0, 0, 0, 0.76604444, -0.64278764, 0, 0.64278764, 0.76604444, 0, 0, 10)
+shadow_enabled = true
+
+[node name="Stars" type="MeshInstance3D" parent="." unique_id=2106660003]
+material_override = SubResource("ShaderMaterial_stars")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_stars")
+
+[node name="MoonLight" type="DirectionalLight3D" parent="." unique_id=2106660004]
+light_color = Color(0.7, 0.8, 1, 1)
+light_energy = 0.0
+
+[node name="Moon" type="Sprite3D" parent="." unique_id=2106660005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2000)
+modulate = Color(0.92, 0.94, 1, 0)
+pixel_size = 0.82
+billboard = 1
+texture = SubResource("GradientTexture2D_moon")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=82891437]
+
+[node name="DebugMenu" parent="CanvasLayer" unique_id=1726618172 instance=ExtResource("7_j5wjh")]
+
+[node name="SettingsScreen" parent="." unique_id=1506325922 instance=ExtResource("9_hve3p")]
+
+[node name="PauseMenu" parent="SettingsScreen" unique_id=505953805 node_paths=PackedStringArray("settings_screen") instance=ExtResource("6_j5wjh")]
+visible = false
+settings_screen = NodePath("..")
+
+[node name="UIMenuController" parent="." unique_id=751000476 node_paths=PackedStringArray("pause_menu") instance=ExtResource("9_vef74")]
+pause_menu = NodePath("../SettingsScreen/PauseMenu")

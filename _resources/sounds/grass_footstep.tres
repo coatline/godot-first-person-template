@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Sound" format=3 uid="uid://nu6x2vfv46a1"]
+
+[ext_resource type="AudioStream" uid="uid://c3jvbo46qet1j" path="res://_assets/audio/grass-step.wav" id="1_ylc6d"]
+[ext_resource type="Script" uid="uid://cunvt610nr3rx" path="res://_resources/sound.gd" id="4_4flp7"]
+
+[resource]
+script = ExtResource("4_4flp7")
+audio_clips = Array[AudioStream]([ExtResource("1_ylc6d")])
+pitch_variation = 0.15
+name = "grass_footstep"
+metadata/_custom_type_script = "uid://cunvt610nr3rx"

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cuknp5w36esac"]
+
+[ext_resource type="Theme" uid="uid://b4qqmy6vlvjfu" path="res://_resources/themes/ui_theme.tres" id="1_06t4h"]
+[ext_resource type="PackedScene" uid="uid://c6r4ui7pxhd24" path="res://standard_button.tscn" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://ciu3n42o87g3t" path="res://title_screen.gd" id="2_fu7sn"]
+
+[node name="MainMenu" type="Node" unique_id=1919724111]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1621612702]
+
+[node name="TitleScreen" type="Control" parent="CanvasLayer" unique_id=280211829 node_paths=PackedStringArray("play_button", "quit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_06t4h")
+script = ExtResource("2_fu7sn")
+play_button = NodePath("VBoxContainer/PlayButton")
+quit_button = NodePath("VBoxContainer/QuitButton")
+
+[node name="TitleLabel" type="RichTextLabel" parent="CanvasLayer/TitleScreen" unique_id=1485223600]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 52.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[wave]Title"
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/TitleScreen" unique_id=529329702]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -40.0
+offset_right = 27.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" parent="CanvasLayer/TitleScreen/VBoxContainer" unique_id=774751590 instance=ExtResource("2_7vrkn")]
+layout_mode = 2
+text = "Play"
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_neighbor_left = NodePath("../PlayButton")
+focus_neighbor_right = NodePath("../PlayButton")
+
+[node name="QuitButton" parent="CanvasLayer/TitleScreen/VBoxContainer" unique_id=1845796153 instance=ExtResource("2_7vrkn")]
+layout_mode = 2
+text = "Quit"
+focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+focus_neighbor_left = NodePath("../QuitButton")
+focus_neighbor_right = NodePath("../QuitButton")

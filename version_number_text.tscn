@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bn4syhfrapodk"]
+
+[ext_resource type="Script" uid="uid://cjpi8gcvvukk8" path="res://version_number_text.gd" id="1_a5ay0"]
+[ext_resource type="Theme" uid="uid://b4qqmy6vlvjfu" path="res://_resources/themes/ui_theme.tres" id="2_3yma8"]
+
+[node name="VersionNumberText" type="CanvasLayer" unique_id=30799334 node_paths=PackedStringArray("label")]
+script = ExtResource("1_a5ay0")
+label = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=1827783705]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 16.0
+grow_vertical = 0
+theme = ExtResource("2_3yma8")
+theme_override_font_sizes/font_size = 6
+text = "v0.0.1"
+vertical_alignment = 2

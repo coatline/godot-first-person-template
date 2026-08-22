@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://detb8jonbf84c"]
+
+[ext_resource type="Theme" uid="uid://b4qqmy6vlvjfu" path="res://_resources/themes/ui_theme.tres" id="1_g2r0l"]
+[ext_resource type="Script" uid="uid://ca3snyqlsddx7" path="res://audio_settings_menu.gd" id="1_mbbwi"]
+[ext_resource type="PackedScene" uid="uid://c6r4ui7pxhd24" path="res://standard_button.tscn" id="2_g2r0l"]
+
+[node name="AudioSettingsMenu" type="Control" unique_id=236953802 node_paths=PackedStringArray("master_volume_h_slider", "sound_volume_h_slider", "music_volume_h_slider", "reset_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g2r0l")
+script = ExtResource("1_mbbwi")
+master_volume_h_slider = NodePath("VBoxContainer/Master Volume/MasterVolumeHSlider")
+sound_volume_h_slider = NodePath("VBoxContainer/Sound Volume/SoundVolumeHSlider")
+music_volume_h_slider = NodePath("VBoxContainer/Music Volume/MusicVolumeHSlider")
+reset_button = NodePath("VBoxContainer/ResetButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1644646587]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -68.5
+offset_right = 59.0
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master Volume" type="VBoxContainer" parent="VBoxContainer" unique_id=720905582]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Master Volume" unique_id=566761849]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master Volume"
+
+[node name="MasterVolumeHSlider" type="HSlider" parent="VBoxContainer/Master Volume" unique_id=185775979]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_neighbor_top = NodePath("../MasterVolumeHSlider")
+focus_neighbor_bottom = NodePath("../../Sound Volume/SoundVolumeHSlider")
+
+[node name="Sound Volume" type="VBoxContainer" parent="VBoxContainer" unique_id=1867381635]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Sound Volume" unique_id=516258227]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sound Volume"
+
+[node name="SoundVolumeHSlider" type="HSlider" parent="VBoxContainer/Sound Volume" unique_id=112374229]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../SoundVolumeHSlider")
+focus_neighbor_top = NodePath("../../Master Volume/MasterVolumeHSlider")
+focus_neighbor_right = NodePath("../SoundVolumeHSlider")
+focus_neighbor_bottom = NodePath("../../Music Volume/MusicVolumeHSlider")
+
+[node name="Music Volume" type="VBoxContainer" parent="VBoxContainer" unique_id=2084174269]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Music Volume" unique_id=1928518317]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music Volume"
+
+[node name="MusicVolumeHSlider" type="HSlider" parent="VBoxContainer/Music Volume" unique_id=1051109558]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+focus_neighbor_left = NodePath("../MusicVolumeHSlider")
+focus_neighbor_top = NodePath("../../Sound Volume/SoundVolumeHSlider")
+focus_neighbor_right = NodePath("../MusicVolumeHSlider")
+focus_neighbor_bottom = NodePath("../../ResetButton")
+
+[node name="ResetButton" parent="VBoxContainer" unique_id=299743611 instance=ExtResource("2_g2r0l")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../ResetButton")
+focus_neighbor_top = NodePath("../Music Volume/MusicVolumeHSlider")
+focus_neighbor_right = NodePath("../ResetButton")
+focus_neighbor_bottom = NodePath("../ResetButton")
+text = "Reset"

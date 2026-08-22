@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c6r4ui7pxhd24"]
+
+[ext_resource type="Theme" uid="uid://b4qqmy6vlvjfu" path="res://_resources/themes/ui_theme.tres" id="1_f5t7x"]
+[ext_resource type="Script" uid="uid://cuq7fa5q1oeba" path="res://standard_button.gd" id="1_plhth"]
+[ext_resource type="AudioStream" uid="uid://x5ir37dgy7h5" path="res://_assets/audio/temp/button-unhovered.wav" id="2_bt70n"]
+[ext_resource type="Script" uid="uid://cunvt610nr3rx" path="res://_resources/sound.gd" id="3_t2lg1"]
+[ext_resource type="AudioStream" uid="uid://fwjspdwk8cjj" path="res://_assets/audio/temp/button-hovered.wav" id="4_t2lg1"]
+[ext_resource type="AudioStream" uid="uid://cns81angjfm2t" path="res://_assets/audio/temp/button-pressed.wav" id="5_y2ueb"]
+
+[sub_resource type="Resource" id="Resource_plhth"]
+script = ExtResource("3_t2lg1")
+audio_clips = Array[AudioStream]([ExtResource("2_bt70n")])
+metadata/_custom_type_script = "uid://cunvt610nr3rx"
+
+[sub_resource type="Resource" id="Resource_y2ueb"]
+script = ExtResource("3_t2lg1")
+audio_clips = Array[AudioStream]([ExtResource("4_t2lg1")])
+metadata/_custom_type_script = "uid://cunvt610nr3rx"
+
+[sub_resource type="Resource" id="Resource_f5t7x"]
+script = ExtResource("3_t2lg1")
+audio_clips = Array[AudioStream]([ExtResource("5_y2ueb")])
+metadata/_custom_type_script = "uid://cunvt610nr3rx"
+
+[node name="StandardButton" type="Button" unique_id=774751590]
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_f5t7x")
+script = ExtResource("1_plhth")
+unhovered_sound = SubResource("Resource_plhth")
+hovered_sound = SubResource("Resource_y2ueb")
+pressed_sound = SubResource("Resource_f5t7x")
