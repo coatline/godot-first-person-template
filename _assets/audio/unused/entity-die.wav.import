@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ddinoriybnpt"
-path="res://.godot/imported/entity-die.wav-5365dbd4b81dd4cd5af8bc7d44408563.sample"
+path="res://.godot/imported/entity-die.wav-a5475b75ce1afc895b7fad3998cc68d0.sample"
 
 [deps]
 
-source_file="res://_assets/audio/temp/entity-die.wav"
-dest_files=["res://.godot/imported/entity-die.wav-5365dbd4b81dd4cd5af8bc7d44408563.sample"]
+source_file="res://_assets/audio/unused/entity-die.wav"
+dest_files=["res://.godot/imported/entity-die.wav-a5475b75ce1afc895b7fad3998cc68d0.sample"]
 
 [params]
 

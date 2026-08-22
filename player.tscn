@@ -11,18 +11,18 @@
 [ext_resource type="Script" uid="uid://cveu0l20kspqf" path="res://keybind_label.gd" id="4_yw30f"]
 [ext_resource type="Script" uid="uid://bbv7jdx630mhg" path="res://player_brain.gd" id="5_kb6p2"]
 [ext_resource type="Script" uid="uid://3q8juv45pgrc" path="res://camera_shake.gd" id="5_shake"]
-[ext_resource type="AudioStream" uid="uid://d14uflfka16bp" path="res://_assets/audio/temp/wheel-click-2.wav" id="8_606se"]
-[ext_resource type="AudioStream" uid="uid://mks0ppoy8slx" path="res://_assets/audio/temp/wheel-click-4.wav" id="8_bwjto"]
 [ext_resource type="Theme" uid="uid://b4qqmy6vlvjfu" path="res://_resources/themes/ui_theme.tres" id="8_n7ghd"]
 [ext_resource type="Script" uid="uid://cgf3rfnwkcmff" path="res://head_bob.gd" id="9_7ahtn"]
 [ext_resource type="Script" uid="uid://cunvt610nr3rx" path="res://_resources/sound.gd" id="9_bwjto"]
 [ext_resource type="Script" uid="uid://bfswqbnn1ymxs" path="res://crosshair.gd" id="10_cros"]
 [ext_resource type="Texture2D" uid="uid://ciksmmx2m7wjm" path="res://_assets/OLDsprites/circle.png" id="11_2ieo8"]
+[ext_resource type="AudioStream" uid="uid://l4424gwuukas" path="res://_assets/audio/unused/block-attack.wav" id="12_7lmhl"]
 [ext_resource type="Texture2D" uid="uid://dhxqwdx8m0ht8" path="res://_assets/sprites/_ui/stamina-bar.png" id="12_bwjto"]
+[ext_resource type="AudioStream" uid="uid://daj5iwwnjtdea" path="res://_assets/audio/unused/boost-wheel.wav" id="14_dx0e4"]
 [ext_resource type="Resource" uid="uid://bli1a5mldlyqq" path="res://_resources/objects/Player.tres" id="15_606se"]
 [ext_resource type="Script" uid="uid://ca5n1s4tm1n5n" path="res://stamina_bar.gd" id="15_op7ga"]
 [ext_resource type="PackedScene" uid="uid://c8r6m4xat2s7x" path="res://registered_object.tscn" id="16_ro1"]
-[ext_resource type="AudioStream" uid="uid://c65vy8xvyjaki" path="res://_assets/audio/temp/hand-friction.wav" id="26_7hik5"]
+[ext_resource type="AudioStream" uid="uid://c65vy8xvyjaki" path="res://_assets/audio/unused/hand-friction.wav" id="26_7hik5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mwb40"]
 radius = 0.2
@@ -34,12 +34,12 @@ height = 1.1
 
 [sub_resource type="Resource" id="Resource_feb5d"]
 script = ExtResource("9_bwjto")
-audio_clips = Array[AudioStream]([ExtResource("8_606se")])
+audio_clips = Array[AudioStream]([ExtResource("12_7lmhl")])
 metadata/_custom_type_script = "uid://cunvt610nr3rx"
 
 [sub_resource type="Resource" id="Resource_fc0e3"]
 script = ExtResource("9_bwjto")
-audio_clips = Array[AudioStream]([ExtResource("8_bwjto")])
+audio_clips = Array[AudioStream]([ExtResource("14_dx0e4")])
 metadata/_custom_type_script = "uid://cunvt610nr3rx"
 
 [node name="Player" type="Node3D" unique_id=693658302 node_paths=PackedStringArray("registered_object", "state_machine", "object_holder", "interactor", "brain", "body", "head") groups=["saveable"]]

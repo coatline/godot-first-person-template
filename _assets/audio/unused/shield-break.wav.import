@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dau0x6lydyuq1"
-path="res://.godot/imported/shield-break.wav-65af59457ec50ffb8f26a01d2540382d.sample"
+path="res://.godot/imported/shield-break.wav-a78b659c8fe82657778232a9d778d503.sample"
 
 [deps]
 
-source_file="res://_assets/audio/temp/shield-break.wav"
-dest_files=["res://.godot/imported/shield-break.wav-65af59457ec50ffb8f26a01d2540382d.sample"]
+source_file="res://_assets/audio/unused/shield-break.wav"
+dest_files=["res://.godot/imported/shield-break.wav-a78b659c8fe82657778232a9d778d503.sample"]
 
 [params]
 

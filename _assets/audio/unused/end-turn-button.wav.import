@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cghc78sh8wjxj"
-path="res://.godot/imported/end-turn-button.wav-305c5a84928a0c630cf942f0c3ca57a4.sample"
+path="res://.godot/imported/end-turn-button.wav-9ab215c535487722815c60b2be7c4592.sample"
 
 [deps]
 
-source_file="res://_assets/audio/temp/end-turn-button.wav"
-dest_files=["res://.godot/imported/end-turn-button.wav-305c5a84928a0c630cf942f0c3ca57a4.sample"]
+source_file="res://_assets/audio/unused/end-turn-button.wav"
+dest_files=["res://.godot/imported/end-turn-button.wav-9ab215c535487722815c60b2be7c4592.sample"]
 
 [params]
 

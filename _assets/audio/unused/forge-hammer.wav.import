@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b6oy4ep7nugri"
-path="res://.godot/imported/forge-hammer.wav-0d1ef52436c930d6fb61375cd0c0da4e.sample"
+path="res://.godot/imported/forge-hammer.wav-9130e49ddde201a3e501e3be9c0266b8.sample"
 
 [deps]
 
-source_file="res://_assets/audio/temp/forge-hammer.wav"
-dest_files=["res://.godot/imported/forge-hammer.wav-0d1ef52436c930d6fb61375cd0c0da4e.sample"]
+source_file="res://_assets/audio/unused/forge-hammer.wav"
+dest_files=["res://.godot/imported/forge-hammer.wav-9130e49ddde201a3e501e3be9c0266b8.sample"]
 
 [params]
 

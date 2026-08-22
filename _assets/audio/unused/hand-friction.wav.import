@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c65vy8xvyjaki"
-path="res://.godot/imported/hand-friction.wav-8ad6c99a09b43077d258bcf7078f62fd.sample"
+path="res://.godot/imported/hand-friction.wav-733349578b4d32e524f74c0f44628373.sample"
 
 [deps]
 
-source_file="res://_assets/audio/temp/hand-friction.wav"
-dest_files=["res://.godot/imported/hand-friction.wav-8ad6c99a09b43077d258bcf7078f62fd.sample"]
+source_file="res://_assets/audio/unused/hand-friction.wav"
+dest_files=["res://.godot/imported/hand-friction.wav-733349578b4d32e524f74c0f44628373.sample"]
 
 [params]
 
