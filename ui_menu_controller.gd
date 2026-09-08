@@ -53,7 +53,7 @@ func _handle_menu_close_input() -> void:
 		return
 
 	if current_menu.can_close():
-		pop_menu()
+		current_menu.back()
 
 func push_menu(menu: UIMenu) -> void:
 	if current_menu == menu:
