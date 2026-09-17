@@ -22,7 +22,7 @@
 [ext_resource type="Resource" uid="uid://bli1a5mldlyqq" path="res://_resources/objects/Player.tres" id="15_606se"]
 [ext_resource type="Script" uid="uid://ca5n1s4tm1n5n" path="res://stamina_bar.gd" id="15_op7ga"]
 [ext_resource type="PackedScene" uid="uid://c8r6m4xat2s7x" path="res://registered_object.tscn" id="16_ro1"]
-[ext_resource type="AudioStream" uid="uid://c65vy8xvyjaki" path="res://_assets/audio/unused/hand-friction.wav" id="26_7hik5"]
+[ext_resource type="AudioStream" uid="uid://c65vy8xvyjaki" path="res://_assets/audio/hand-friction.wav" id="26_7hik5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mwb40"]
 radius = 0.2
@@ -80,8 +80,6 @@ script = ExtResource("5_kb6p2")
 player_body = NodePath("..")
 player_actor = NodePath("../..")
 
-[node name="Sounds" type="AudioStreamPlayer3D" parent="Player" unique_id=1015373620]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1336900411]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
 shape = SubResource("CapsuleShape3D_mwb40")
@@ -97,7 +95,7 @@ hit_from_inside = true
 [node name="Head" type="Node3D" parent="Player" unique_id=1474192869 node_paths=PackedStringArray("navigation_obstacle", "camera", "actor_body")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 script = ExtResource("2_g1dw6")
-navigation_obstacle = NodePath("../NavigationObstacle3D")
+navigation_obstacle = NodePath("")
 camera = NodePath("Camera3D")
 actor_body = NodePath("..")
 
@@ -152,7 +150,7 @@ horizontal_alignment = 1
 vertical_alignment = 2
 script = ExtResource("4_yw30f")
 
-[node name="CrosshairTexture" type="TextureRect" parent="Player/CanvasLayer" unique_id=711398983 node_paths=PackedStringArray("interactor")]
+[node name="Crosshair" type="TextureRect" parent="Player/CanvasLayer" unique_id=711398983 node_paths=PackedStringArray("interactor")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -173,7 +171,7 @@ script = ExtResource("10_cros")
 interactor = NodePath("../../Head/Camera3D/InteractRaycast")
 hovered_scale = 1.1
 
-[node name="StaminaBar" type="TextureProgressBar" parent="Player/CanvasLayer/CrosshairTexture" unique_id=463957066 node_paths=PackedStringArray("stamina_component", "remnant_bar")]
+[node name="StaminaBar" type="TextureProgressBar" parent="Player/CanvasLayer/Crosshair" unique_id=463957066 node_paths=PackedStringArray("stamina_component", "remnant_bar")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -194,7 +192,7 @@ script = ExtResource("15_op7ga")
 stamina_component = NodePath("../../../StaminaComponent")
 remnant_bar = NodePath("StaminaRemnant")
 
-[node name="StaminaRemnant" type="TextureProgressBar" parent="Player/CanvasLayer/CrosshairTexture/StaminaBar" unique_id=2134567891]
+[node name="StaminaRemnant" type="TextureProgressBar" parent="Player/CanvasLayer/Crosshair/StaminaBar" unique_id=2134567891]
 modulate = Color(1, 0.8509804, 0.3019608, 0.7176471)
 show_behind_parent = true
 layout_mode = 1
@@ -207,10 +205,6 @@ value = 100.0
 fill_mode = 4
 nine_patch_stretch = true
 texture_progress = ExtResource("12_bwjto")
-
-[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="Player" unique_id=2103564714]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04177034, -0.0178411, 0.028431952)
-vertices = PackedVector3Array(0.25831935, 0, 0.12508042, 0.06548858, 0, 0.2528067, -0.15293801, 0, 0.14473657, -0.26527083, 0, -0.17181307, 0.00914862, 0, -0.4700927, 0.32240483, 0, -0.1861931)
 
 [node name="RegisteredObject" parent="Player" unique_id=876014778 node_paths=PackedStringArray("root") instance=ExtResource("16_ro1")]
 type = ExtResource("15_606se")

@@ -5,7 +5,6 @@ class_name InteractionCrosshair
 @export var hovered_scale: float = 1.4
 @export var hovered_color: Color = Color(1.0, 0.85, 0.4, 1.0)
 @export var ease_speed: float = 12.0
-@export var stamina_bar: TextureProgressBar
 
 var target_progress: float = 0.0
 var hover_progress: float = 0.0
