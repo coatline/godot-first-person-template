@@ -1,7 +1,6 @@
 extends ActorHead
 class_name PlayerHead
 
-@export var navigation_obstacle: NavigationObstacle3D
 @export var mouse_sensitivity = 0.5
 @export var min_angle = -80
 @export var max_angle = 90
@@ -66,7 +65,6 @@ func _physics_process(delta) -> void:
 	rotation_degrees.x = look_rot.x + current_lean
 	rotation_degrees.y = look_rot.y
 	rotation_degrees.z = current_roll
-	navigation_obstacle.rotation_degrees = Vector3(0, look_rot.y, 0)
 	_update_fov(delta, speed_boost_ratio)
 
 func apply_mouse_sensitivity(value: float) -> void:
