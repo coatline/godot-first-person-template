@@ -2,6 +2,7 @@ extends ActorBrain
 
 @export var player_body: PlayerBody
 @export var player_actor: Actor
+@export var stamina_component: StaminaComponent
 
 var move_state: PlayerMoveState
 var sprint_toggled: bool = false
@@ -9,6 +10,10 @@ var sprint_toggled: bool = false
 func _ready():
 	move_state = PlayerMoveState.new(player_actor)
 	player_actor.state_machine.try_set_state(move_state)
+	stamina_component.stamina_depleted.connect(_stamina_depleted)
+
+func _stamina_depleted():
+	sprint_toggled = false
 
 func _physics_process(delta):
 	if paused:

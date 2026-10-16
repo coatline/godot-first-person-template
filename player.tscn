@@ -92,11 +92,9 @@ mesh = SubResource("CapsuleMesh_80nbo")
 target_position = Vector3(0, -0.1, 0)
 hit_from_inside = true
 
-[node name="Head" type="Node3D" parent="Player" unique_id=1474192869 node_paths=PackedStringArray("camera", "actor_body")]
+[node name="Head" type="Node3D" parent="Player" unique_id=1474192869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 script = ExtResource("2_g1dw6")
-camera = NodePath("Camera3D")
-actor_body = NodePath("..")
 
 [node name="HeadBob" type="Node" parent="Player/Head" unique_id=1631919419 node_paths=PackedStringArray("actor_body", "head_node")]
 script = ExtResource("9_7ahtn")
